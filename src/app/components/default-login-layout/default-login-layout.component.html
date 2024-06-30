@@ -1,14 +1,23 @@
 <main>
-    <section>
+    <section class="form-section">
         <img src="/assets/svg/logo.svg"/>
-        <h2></h2>
-        <button></button>
-        <div>
-            <span>or</span>
+        <h2>{{ title }}</h2>
+        <ng-content></ng-content>
+        <div class="btn-wrapper">
+            <button 
+            class="btn-primary" 
+            (click)="submit()"
+            [disabled]="disablePrimaryBtn"
+            >{{ primaryBtnText }}</button>
+            <div class="divider">
+                <div></div>
+                <span>OR</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary" (click)="navigate()">{{ secondaryBtnText }}</button>
         </div>
-        <button></button>
     </section>
-    <section>
+    <section class="main-section">
         <img src="/assets/svg/main-illustration.svg"/>
     </section>
 </main>
